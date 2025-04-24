@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.kduytran</groupId>
 	<artifactId>olp-core</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>olp-core</name>
 	<description>Parent project for OLP system</description>
 	<packaging>pom</packaging>
@@ -19,6 +19,8 @@
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
 		<jwt.version>0.11.5</jwt.version>
 		<kafka.version>3.1.1</kafka.version>
+		<mapstruct.version>1.5.5.Final</mapstruct.version>
+		<jib-maven-plugin.version>3.4.0</jib-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -55,32 +57,6 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -100,7 +76,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
 			<dependency>
 				<groupId>org.springframework.kafka</groupId>
 				<artifactId>spring-kafka</artifactId>
@@ -110,6 +85,17 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct</artifactId>
+				<version>${mapstruct.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct-processor</artifactId>
+				<version>${mapstruct.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
