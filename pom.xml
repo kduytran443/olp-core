@@ -147,5 +147,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/kduytran443/olp-core</url>
+		</repository>
+	</distributionManagement>
 
 </project>
