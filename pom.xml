@@ -10,10 +10,10 @@
 	</parent>
 	<groupId>com.kduytran</groupId>
 	<artifactId>olp-core</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<name>olp-core</name>
 	<description>Parent project for OLP system</description>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
