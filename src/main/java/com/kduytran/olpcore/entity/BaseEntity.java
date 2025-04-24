@@ -1,15 +1,9 @@
 package com.kduytran.olpcore.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.UUID;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @MappedSuperclass
 public abstract class BaseEntity {
 
@@ -29,5 +23,29 @@ public abstract class BaseEntity {
         if (id == null) {
             id = UUID.randomUUID().toString();
         }
+    }
+
+    public Long getPk() {
+        return pk;
+    }
+
+    public void setPk(Long pk) {
+        this.pk = pk;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
