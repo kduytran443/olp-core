@@ -1,6 +1,6 @@
-package com.kduytran.olpcore.exception;
+package com.kduytran.olpcommon.exception;
 
-import com.kduytran.olpcore.dto.ErrorResponseDTO;
+import com.kduytran.olpcommon.dto.ErrorResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -19,12 +19,12 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponseDTO> handleGlobalException(Exception exception, WebRequest webRequest) {
+    protected ResponseEntity<ErrorResponseDTO> handleGlobalException(Exception exception, WebRequest webRequest) {
         return getErrorResponseEntity(exception, webRequest, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponseDTO> handleResourceNotFoundException(
+    protected ResponseEntity<ErrorResponseDTO> handleResourceNotFoundException(
             ResourceNotFoundException exception,
             WebRequest webRequest) {
         return getErrorResponseEntity(exception, webRequest, HttpStatus.NOT_FOUND);
@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(validationErrors, HttpStatus.BAD_REQUEST);
     }
 
-    private ResponseEntity<ErrorResponseDTO> getErrorResponseEntity(
+    protected ResponseEntity<ErrorResponseDTO> getErrorResponseEntity(
             Exception exception, WebRequest webRequest, HttpStatus httpStatus) {
         ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
                 webRequest.getDescription(false),

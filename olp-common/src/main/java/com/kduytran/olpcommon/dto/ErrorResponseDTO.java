@@ -1,4 +1,4 @@
-package com.kduytran.olpcore.dto;
+package com.kduytran.olpcommon.dto;
 
 import org.springframework.http.HttpStatus;
 

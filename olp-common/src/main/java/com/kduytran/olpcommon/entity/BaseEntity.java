@@ -1,4 +1,4 @@
-package com.kduytran.olpcore.entity;
+package com.kduytran.olpcommon.entity;
 
 import jakarta.persistence.*;
 
