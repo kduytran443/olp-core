@@ -30,6 +30,13 @@ public class GlobalExceptionHandler {
         return getErrorResponseEntity(exception, webRequest, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(ResourceAlreadyExistedException.class)
+    protected ResponseEntity<ErrorResponseDTO> handleResourceAlreadyExistedException(
+            ResourceAlreadyExistedException exception,
+            WebRequest webRequest) {
+        return getErrorResponseEntity(exception, webRequest, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         List<ObjectError> validationErrorList = ex.getBindingResult().getAllErrors();
