@@ -9,7 +9,7 @@ public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long seq;
+    private Long pk;
 
     @Version
     @Column
@@ -25,12 +25,12 @@ public abstract class BaseEntity {
         }
     }
 
-    public Long getSeq() {
-        return seq;
+    public Long getPk() {
+        return pk;
     }
 
-    public void setSeq(Long seq) {
-        this.seq = seq;
+    public void setPk(Long pk) {
+        this.pk = pk;
     }
 
     public Long getVersion() {
